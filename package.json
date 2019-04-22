@@ -1,0 +1,27 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "NodeJS and Express app to match similar survey responses",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "expressjs": "^1.0.1",
+    "npm": "^6.9.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mprestonsparks/FriendFinder.git"
+  },
+  "author": "Preston Sparks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mprestonsparks/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/mprestonsparks/FriendFinder#readme"
+}
