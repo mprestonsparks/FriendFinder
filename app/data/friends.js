@@ -6,30 +6,30 @@ var friendsArray = [
         photo: 'https://nellions.co.ke/wp-content/uploads/2018/06/male-placeholder-image.jpeg',
         score: [
             '1',
-            '2',
-            '3',
-            '4',
-            '5',
             '1',
-            '2',
-            '3',
-            '4',
-            '5'
+            '1',
+            '1',
+            '1',
+            '1',
+            '1',
+            '1',
+            '1',
+            '1'
         ]
     },
     {
         name: 'George',
         photo: 'https://nellions.co.ke/wp-content/uploads/2018/06/male-placeholder-image.jpeg',
         score: [
-            '1',
-            '2',
-            '3',
-            '4',
             '5',
-            '1',
-            '2',
-            '3',
-            '4',
+            '5',
+            '5',
+            '5',
+            '5',
+            '5',
+            '5',
+            '5',
+            '5',
             '5'
         ]
     }
