@@ -13,8 +13,22 @@ var friends = require('../data/friends.js');
 // =============================================================
 module.exports = function(app) {
 
+  // Display all entries in friendsArray
   app.get('/api/friends', function(req, res) {
       res.json(friends);
+  });
+
+  // Add new survey response to friendsArray
+  app.post('/api/friends', function(req,res) {
+    //
+    var userInput = req.body;
+
+    var userResponses = userInput.scores;
+
+
+    // Add user
+    friends.push(userInput);
+
   });
 
  

@@ -158,6 +158,7 @@
                     <button class="btn btn-primary" type="submit" name="action" id="submitButton">Submit Responses
                 </button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -176,16 +177,16 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.modal').modal({
-            dismissible: false, // Modal can be dismissed by clicking outside of the modal
-            opacity: .5, // Opacity of modal background
-            inDuration: 300, // Transition in duration
-            outDuration: 200, // Transition out duration
-            startingTop: '4%', // Starting top style attribute
-            endingTop: '10%' // Ending top style attribute
-        });
-    });
+    // $(document).ready(function() {
+    //     $('.modal').modal({
+    //         dismissible: false, // Modal can be dismissed by clicking outside of the modal
+    //         opacity: .5, // Opacity of modal background
+    //         inDuration: 300, // Transition in duration
+    //         outDuration: 200, // Transition out duration
+    //         startingTop: '4%', // Starting top style attribute
+    //         endingTop: '10%' // Ending top style attribute
+    //     });
+    // });
 
     // Activate submit button
     $('#submitButton').on('click', function(event) {
@@ -212,10 +213,10 @@
         $.post('/api/friends', userInput)
         .done(function(data) {
             // Set the name and image values of friend match
-            $('#userMatch').html(data.matchName);
-            $("#userMatchImage").attr("src", data.matchImage);
+            // $('#userMatch').html(data.matchName);
+            // $("#userMatchImage").attr("src", data.matchImage);
             // Pop open the modal dialog
-            $('#modal').modal('open');
+            // $('#modal').modal('open');
         });
             
     });
