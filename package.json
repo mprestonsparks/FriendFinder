@@ -5,8 +5,9 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
+    "express": "^4.16.4",
     "expressjs": "^1.0.1",
+    "nodemon": "^1.18.11",
     "npm": "^6.9.0",
     "path": "^0.12.7"
   },

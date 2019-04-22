@@ -14,6 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+// Basic route that sends the user to the home page
+// =============================================================
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "app/public/home.html"));
+  });
+  
 
 // Starts the server to begin listening
 // =============================================================
