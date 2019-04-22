@@ -14,11 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// Basic route that sends the user to the home page
+// Add routes
 // =============================================================
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "app/public/home.html"));
-  });
+require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
+require(path.join(__dirname, './app/routing/apiRoutes'))(app);
   
 
 // Starts the server to begin listening

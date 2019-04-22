@@ -2,36 +2,25 @@
 // 1) A GET Route to `/survey` which should display the survey page.
 // 2) A default, catch-all route that leads to `home.html` which displays the home page.
 
-
-
-
 // Dependencies
 // =============================================================
-var express = require("express");
 var path = require("path");
 
-// Sets up the Express App
+
+// Export HTML routes
 // =============================================================
-var app = express();
-var PORT = 3000;
+module.exports = function(app) {
 
-// Sets up the Express app to handle data parsing
-// =============================================================
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-
-// Displays survey.html page
-// =============================================================
-app.get("/public/survey.html", function(req, res) {
-  res.sendFile(path.join(__dirname, "survey.html"))
-});
-
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+  // Basic route that sends the user to the home page
+  // =============================================================
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
   
-  
+  // Displays survey.html page
+  // =============================================================
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/survey.html"))
+  });
+    
+}
