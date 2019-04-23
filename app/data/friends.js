@@ -2,8 +2,8 @@
 // Array to store friend objects
 var friendsArray = [
     {
-        name: 'Bob',
-        photo: 'https://nellions.co.ke/wp-content/uploads/2018/06/male-placeholder-image.jpeg',
+        name: 'Dave',
+        photo: 'https://www.chadblinman.com/wp-content/uploads/crazy-man.jpg',
         score: [
             '1',
             '1',
@@ -19,7 +19,7 @@ var friendsArray = [
     },
     {
         name: 'George',
-        photo: 'https://nellions.co.ke/wp-content/uploads/2018/06/male-placeholder-image.jpeg',
+        photo: 'https://itsnotamatch.files.wordpress.com/2012/04/crazy_face.jpg',
         score: [
             '5',
             '5',
@@ -32,7 +32,24 @@ var friendsArray = [
             '5',
             '5'
         ]
+    },
+    {
+        name: 'Steve',
+        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDU3IX8eC_Gvj52INZkKI10vk4OW3LSl9HM0Q6Qxpiwi07vizLuA',
+        score: [
+            '3',
+            '3',
+            '3',
+            '3',
+            '3',
+            '3',
+            '3',
+            '3',
+            '3',
+            '3'
+        ]
     }
 ];
 
 module.exports = friendsArray;
+

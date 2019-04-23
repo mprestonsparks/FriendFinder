@@ -30,11 +30,9 @@ module.exports = function(app) {
     var userResponses = userInput.scores.map(Number);
     var matchName = '';
     var matchImage = '';
-    // Set initial scoreDifference to maximum possible
+    // Set baseScoreDifference to maximum possible score difference
     var baseScoreDifference = 50;
 
-    console.log("friends.length",friends.length);
-    console.log("userResponses",userResponses);
 
 
     // For each person in friendsArray
@@ -44,20 +42,16 @@ module.exports = function(app) {
       for (var j=0; j<userResponses.length; j++) {
         var friendScore = friends[i].score[j];
         var userScore = userResponses[j];
-        console.log("friendScore(i)"+friendScore);
-        console.log("userScore(J)" + userScore);
-        console.log("friendsLength" + friends.length);
         scoreDifference += Math.abs(friendScore - userScore);
         
         };
-        console.log("scoreDifference" + scoreDifference);
-        // if score difference is lowest in friendsArray, set friend as the match
+        // if friend's score difference is lowest in friendsArray, set friend as the match
         if (scoreDifference < baseScoreDifference) {
           baseScoreDifference = scoreDifference;
           matchName = friends[i].name;
           matchImage = friends[i].photo;
         };
-        console.log("matchName" + matchName);
+        // console.log("matchName " + matchName);
     };
 
 
@@ -65,8 +59,7 @@ module.exports = function(app) {
     friends.push(userInput);
 
     // Send match
-    // res.json({matchName: matchName, matchImage: matchImage});
-    // console.log("matchName" + matchName);
+    res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
 
 
 

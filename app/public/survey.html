@@ -3,13 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>FriendFinder</title>
-        <!-- Latest compiled and minified CSS & JS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <!-- Font Awesome Glyphicons -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">  -->
-    </head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    </head>
 <body>
     <div class="container">
         <div class="row">
@@ -162,32 +157,35 @@
             </div>
         </div>
     </div>
+</body>
 
-
-<!-- Modal Dialog Displaying Closest Friend Match -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <h4>Closest Friend Match</h4>
-        <hr>
-        <h5 id="userMatch"></h5>
-        <img id="userMatchImage" class="materialboxed" width="650" src="">
+<!-- Modal Dialog to Display Friend Match -->
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalBestMatch" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Match Found!</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="matchMessage"></div>
+                <h4 id="userMatch"></h4>
+                <img id="userMatchImage"  width="300" src="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
     </div>
 </div>
 
 
 
-<script type="text/javascript">
-    // $(document).ready(function() {
-    //     $('.modal').modal({
-    //         dismissible: false, // Modal can be dismissed by clicking outside of the modal
-    //         opacity: .5, // Opacity of modal background
-    //         inDuration: 300, // Transition in duration
-    //         outDuration: 200, // Transition out duration
-    //         startingTop: '4%', // Starting top style attribute
-    //         endingTop: '10%' // Ending top style attribute
-    //     });
-    // });
 
+<script type="text/javascript">
     // Activate submit button
     $('#submitButton').on('click', function(event) {
         event.preventDefault();
@@ -208,18 +206,20 @@
                 $('#question10').val()
             ]
         };
-
         // Add user inputs to friends list
         $.post('/api/friends', userInput)
         .done(function(data) {
             // Set the name and image values of friend match
-            // $('#userMatch').html(data.matchName);
-            // $("#userMatchImage").attr("src", data.matchImage);
+            $('#userMatch').html("Match Name: " + "<small>" + data.matchName + "</small>");
+            $('#matchMessage').html("Congratulations, " + userInput.name + "!" + "<br>It looks like you and " + data.matchName + " have a lot in common! <br><br>");
+            $("#userMatchImage").attr("src", data.matchImage);
+            console.log("matchName " + data.matchName);
             // Pop open the modal dialog
-            // $('#modal').modal('open');
+            $('#test-modal').modal('show');
+            $('#modal').modal('show');
         });
             
     });
 </script>
-</body>
+
 </html>
