@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>FriendFinder</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    </head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script></head>
 <body>
     <div class="container">
         <div class="row">
@@ -12,9 +13,9 @@
                 <h1>Survey Questions</h1>
                 <hr>
                 <h3>About You</h3>
-                <h5>Name (Required)</h5>
+                <h5>Name</h5>
                 <input type="text" placeholder=" Your Name Here" id="userName">
-                <h5>Link to Photo Image (Required)</h5>
+                <h5>Link to Photo Image</h5>
                 <input type="text" placeholder=" Link to Photo Here" id="userPhoto">
 
                 <!-- Survey Questions -->
@@ -149,7 +150,7 @@
                 </div>
 
                 <!-- Survey Submit Button -->
-                <div class="col-sm-12">
+                <div class="col-sm-12" style="margin-top:2.5%">
                     <button class="btn btn-primary" type="submit" name="action" id="submitButton">Submit Responses
                 </button>
                 </div>
@@ -157,6 +158,12 @@
             </div>
         </div>
     </div>
+
+    <footer class="page-footer text-center" style="bottom:0; margin-top:2.5%">
+        <div class="container">
+            <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/mprestonsparks/FriendFinder" target="_blank">GitHub Repo</a></p>
+        </div>
+    </footer>
 </body>
 
 <!-- Modal Dialog to Display Friend Match -->
